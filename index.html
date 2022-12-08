@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4fc3f7"/>
+    <title>Box Keeper</title>
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Import App.css -->
+    <link rel="stylesheet" href="css/app.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class = "brown lighten-4">
+
+    <header>
+        <div class="navbar-fixed">
+            <nav class="blue lighten-2">
+                <div class="container">
+                    <a href="index.html" class="brand-logo">Box Keeper</a>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li class="logged-in">   
+                            <form>
+                                <div class="input-field">
+                                    <input class="search" type="search" required class="autocomplete">
+                                    <label for="search"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </li>    
+                        <!-- <li class="active"><a href="index.html">Home</a></li> -->
+                        <li class="logged-in">
+                            <a href="#" class="waves-effect modal-trigger" data-target="modal-account">Account</a>
+                        </li>
+                        <li class="logged-in">
+                            <a href="#" class="logout waves-effect">Logout</a>
+                        </li>
+                        <li class="logged-out">
+                            <a href="#" class="waves-effect modal-trigger" data-target="modal-login">Log In</a>
+                        </li>
+                        <li class="logged-out">
+                            <a href="#" class="waves-effect modal-trigger" data-target="modal-signup">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="sidenav" id="mobile-links">
+            <!-- <li class="active"><a href="index.html">Home</a></li> -->
+            <li class="logged-in">
+                <a href="#" class="waves-effect modal-trigger" data-target="modal-account">Account</a>
+            </li>
+            <li class="logged-in">
+                <a href="#" class="logout waves-effect">Logout</a>
+            </li>
+            <li class="logged-out">
+                <a href="#" class="waves-effect modal-trigger" data-target="modal-login">Log In</a>
+            </li>
+            <li class="logged-out">
+                <a href="#" class="waves-effect modal-trigger" data-target="modal-signup">Sign Up</a>
+            </li>
+            <div class="logged-in divider"></div>
+            <li class="logged-in">   
+                <form>
+                    <div class="input-field">
+                        <input class="search" type="search" required class="autocomplete">
+                        <label for="search"><i class="material-icons">search</i></label>
+                    </div>
+                </form>
+            </li> 
+
+        </ul>
+    </header>
+
+    <main>
+
+        <!-- LOGGED OUT WELCOME  -->
+        <div class="logged-out container">
+            <div class = "row">
+                <div class="col s8 offset-s2">
+                    <div class="card large white">
+                    <div class="card-image">
+                        <img src="img/box.jpg" alt="box">
+                    </div>
+                    <div class="card-content blue-grey-text">
+                        <span class="card-title">Welcome to Box Keeper</span>
+                        <p>Catalog your storage boxes and find your things easily!</p>
+                        </div>
+                    <div class="card-action">
+                        <a href="#" class="waves-effect modal-trigger" data-target="modal-signup">Sign Up</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGGED IN BOXES  -->
+        <div class="logged-in container">
+            <div class = "row">
+                <div class="boxes container" id="boxes">
+                    <!-- Boxes populate here -->
+                </div>
+            </div>
+            <div class="right">
+                <a class="btn-floating btn-large add-btn modal-trigger btn tooltipped pulse" href="#boxmodal" data-position="top" data-tooltip="Add a New Box">
+                    <i class="material-icons">add</i>
+                </a>
+            </div>
+        </div>
+
+        <!-- MODALS  -->
+        <!-- Signup Modal -->
+        <div id="modal-signup" class="modal">
+            <div class="modal-content">
+                <h1>Sign Up</h1>
+                <form id="signup-form">
+                    <div class="input-field">
+                            <input type="email" id="signup-email" required>
+                            <label for="signup-email">Email</label>
+                    </div>
+                    <div class="input-field">
+                            <input type="password" id="signup-password" required>
+                            <label for="signup-password">Password</label>
+                    </div>
+                    <button class="btn waves-effect waves-light">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div id="modal-login" class="modal">
+            <div class="modal-content">
+                <h1>Log in</h1>
+                <form id="login-form">
+                    <div class="input-field">
+                            <input type="email" id="login-email" required>
+                            <label for="login-email">Email</label>
+                    </div>
+                    <div class="input-field">
+                            <input type="password" id="login-password" required>
+                            <label for="login-password">Password</label>
+                    </div>
+                    <button class="btn waves-effect waves-light">Log In</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Account Info Modal -->
+        <div id="modal-account" class="modal">
+            <div class="modal-content center-align">
+                <h1>Account Information</h1>
+                <div class="account-details">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for adding new box -->
+        <div id="boxmodal" class="modal bottom-sheet">
+            <form class="add-box container section">
+                <div class="modal-content">
+                    <div class="row">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat right">Cancel</a>
+                        <h4>New Box</h4>
+                        <div class="input-field col s4">
+                            <input type="text" class="validate" name="name" autofocus="autofocus">
+                            <label for="box_name">Box Name</label>
+                        </div>
+                        <div class="input-field col s10">
+                            <textarea type="text" class="materialize-textarea" name="items"></textarea>
+                            <label for="items">Items</label>
+                        </div>
+                        <div class="input-field col s10">
+                            <textarea type="text" class="materialize-textarea" name="category"></textarea>
+                            <label for="category">Categories</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="input-field center">
+                        <button class="btn-small modal-close" type="submit">add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Modal for displaying/editing existing box -->
+        <div id="editboxmodal" class="modal">
+            <form class="edit-box container section">
+                <div class="modal-content">
+                    <div class="row">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat right">Cancel</a>
+                        <h4>Edit Box</h4>
+                        <div class="input-field hide">
+                            <input type="text" class="validate" name="uniqueid" uniqueid="uniqueid" autofocus="autofocus">
+                            <label for="uniqueid">ID</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input type="text" class="validate" name="name" id="boxname" autofocus="autofocus">
+                            <label for="boxname">Box Name</label>
+                        </div>
+                        <div class="input-field col s10">
+                            <textarea type="text" class="materialize-textarea" name="items" id="boxitems"></textarea>
+                            <label for="items">Items</label>
+                        </div>
+                        <div class="input-field col s10">
+                            <textarea type="text" class="materialize-textarea" name="categories"></textarea>
+                            <label for="categories">Categories</label>
+                        </div>
+                    </div>
+                <div class="modal-footer">
+                    <div class="input-field center">
+                        <button class="btn-small modal-close" type="submit">Save</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <footer class="page-footer grey darken-3">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <p class="grey-text text-lighten-4">© 2022 Copyright Kira Luethe</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="pages/about.html">About</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="/public/js/App.js"></script>
+    <script src="/public/js/ui.js"></script>
+    <script type="module" src="js/db.js"></script>
+</body>
+</html>

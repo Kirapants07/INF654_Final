@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4fc3f7"/>
+    <title>Fallback</title>
+    <link rel="manifest" href="../manifest.json">
+
+    <!-- Import App.css -->
+    <link rel="stylesheet" href="../css/app.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+</head>
+<body class = "brown lighten-4">
+
+    <header>
+        <div class="navbar-fixed">
+            <nav class="nav-wrapper blue lighten-2">
+                <div class="container">
+                    <a href="../index.html" class="brand-logo">Box Keeper</a>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="../index.html">Home</a></li>
+                        <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="login.html">Log In</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="../index.html">Home</a></li>
+            <li class="active"><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="login.html">Log In</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="card white">
+                <div class="card-content blue-grey-text">
+                    <div class="row">
+                        <form class="col s12">
+                            <h1>About</h1>
+                            <p>Unable to load page while offline</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer grey darken-3">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <p class="grey-text text-lighten-4">© 2022 Copyright Kira Luethe</p>
+            </div>
+            <div class="col l4 offset-l0 s12">
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
+</html>

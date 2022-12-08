@@ -1,0 +1,35 @@
+{
+    "name": "Box Keeper",
+    "short_name": "Box Keeper",
+    "description": "Catalog your storage boxes and find your things easily!",
+    "start_url": "/public/index.html",
+    "scope": ".",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#d7ccc8",
+    "theme_color": "#4fc3f7",
+    "dir": "ltr",
+    "lang": "en-US",
+    "icons": [
+        {
+            "src": "/public/img/icons/boxicon-48x48.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "/public/img/icons/boxicon-96x96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "/public/img/icons/boxicon-152x152.png",
+            "type": "image/png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "/public/img/icons/boxicon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
